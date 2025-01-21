@@ -117,11 +117,17 @@ def get_cards(fake):
         }
 
         file_operations.render_template(
-            'charsheet.svg', f'cards/result-{i}.svg', context
+            'charsheet.svg',
+            f'cards/result-{i}.svg',
+            context,
         )
 
 
-if __name__ == '__main__':
+def main():
     fake = Faker('ru_RU')
     os.makedirs('cards', exist_ok=True)
     get_cards(fake)
+
+
+if __name__ == '__main__':
+    main()
